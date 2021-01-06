@@ -1,0 +1,61 @@
+<templateSet group="Flutter snippets">
+  <template name="jsonserializable" value="import 'package:json_annotation/json_annotation.dart';&#10;&#10;part '$FILE_NAME$.g.dart';&#10;&#10;@JsonSerializable()&#10;class $class_name$ {&#10;  const $class_name$({});&#10;  &#10;  factory $class_name$.fromJson(Map&lt;String, dynamic&gt; json) =&gt;&#10;      _$$$class_name$FromJson(json);&#10;&#10;  Map&lt;String, dynamic&gt; toJson() =&gt; _$$$class_name$ToJson(this);&#10;  $code$&#10;}" description="Create a JsonSerializable template" toReformat="false" toShortenFQNames="true">
+    <variable name="FILE_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+    <variable name="class_name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="code" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="freezed" value="import 'package:flutter/foundation.dart';&#10;import 'package:freezed_annotation/freezed_annotation.dart';&#10;&#10;part '$FILE_NAME$.freezed.dart';&#10;&#10;@freezed&#10;abstract class $class_name$ with _$$$class_name$ {&#10;  const factory $class_name$({$code$}) = _$class_name$;&#10;&#10;  const $class_name$._();&#10;}" description="Create a freezed templates" toReformat="false" toShortenFQNames="true">
+    <variable name="FILE_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+    <variable name="class_name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="code" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="fromjson" value="  factory $CLASS_NAME$.fromJson(Map&lt;String, dynamic&gt; json) =&gt;&#10;      _$$$CLASS_NAME$FromJson(json);&#10;&#10;  Map&lt;String, dynamic&gt; toJson() =&gt; _$$$CLASS_NAME$ToJson(this);" description="Create fromJson/toJson template" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS_NAME" expression="dartClassName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART" value="true" />
+      <option name="DART_STATEMENT" value="false" />
+      <option name="DART_TOPLEVEL" value="false" />
+    </context>
+  </template>
+  <template name="statenotifier" value="import 'package:state_notifier/state_notifier.dart';&#10;&#10;class $class_name$StateNotifier extends StateNotifier&lt;$state$&gt;&#10;    with LocatorMixin {&#10;  $class_name$StateNotifier() : super(const $state$());&#10;  @override&#10;  void initState() {&#10;    super.initState();&#10;  }&#10;}" description="Create StateNotifier template" toReformat="false" toShortenFQNames="true">
+    <variable name="class_name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="state" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="todo" value="// TODO: $code$" description="Create a TODO" toReformat="false" toShortenFQNames="true">
+    <variable name="code" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="jsonresult" value="import 'package:json_annotation/json_annotation.dart';&#10;&#10;part '$FILE_NAME$.g.dart';&#10;&#10;@JsonSerializable()&#10;class $class$ extends ResponseResult {&#10;  const $class$({String status, String message})&#10;      : super(status: status, message: message);&#10;&#10;  factory $class$.fromJson(Map&lt;String, dynamic&gt; json) =&gt;&#10;      _$$$class$FromJson(json);&#10;&#10;  Map&lt;String, dynamic&gt; toJson() =&gt; _$$$class$ToJson(this);&#10;  $code$&#10;}" description="Create template for Result" toReformat="false" toShortenFQNames="true">
+    <variable name="FILE_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+    <variable name="class" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="code" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="widgettest" value="import 'package:flutter_test/flutter_test.dart';&#10;&#10;void main() {&#10;  testWidgets('$description$', (WidgetTester tester) async {&#10;    await tester.pumpWidget($widget$);&#10;  });&#10;}" description="Create WidgetTest Template" toReformat="false" toShortenFQNames="true">
+    <variable name="description" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="widget" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="unittests" value="import 'package:flutter_test/flutter_test.dart';&#10;&#10;void main() {&#10;  test('$description$', () {&#10;    $code$&#10;  });&#10;}" description="Create Unit test template" toReformat="false" toShortenFQNames="true">
+    <variable name="description" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="code" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+</templateSet>

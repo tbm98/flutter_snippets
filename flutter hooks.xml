@@ -1,0 +1,23 @@
+<templateSet group="Flutter hooks">
+  <template name="hookwidget" value="class $name$ extends HookWidget{&#10;  @override&#10;  Widget build(BuildContext context) {&#10;    $code$&#10;  }&#10;}" description="Create a HookWidget" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="code" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="hookstateful" value="class $NAME$ extends StatefulHookWidget {&#10;  @override&#10;  _$NAME$State createState() =&gt; _$NAME$State();&#10;}&#10;&#10;class _$NAME$State extends State&lt;$NAME$&gt; {&#10;  @override&#10;  Widget build(BuildContext context) {&#10;    return Container($END$);&#10;  }&#10;}&#10;" description="Create StatefulHookWidget template" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="hookcustom" value="class $class$ extends Hook&lt;$type$&gt; {&#10;  const $class$();&#10;&#10;  @override&#10;  _$class$State createState() =&gt; _$class$State();&#10;}&#10;&#10;class _$class$State extends HookState&lt;$type$, $class$&gt; {&#10;  $code$&#10;  &#10;  @override&#10;  void initHook() {&#10;    super.initHook();&#10;  }&#10;&#10;  @override&#10;  $type$ build(BuildContext context) {}&#10;&#10;  @override&#10;  void dispose() {&#10;    super.dispose();&#10;  }&#10;}" description="Create a Custom Hook" toReformat="false" toShortenFQNames="true">
+    <variable name="class" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="type" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="code" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+</templateSet>
